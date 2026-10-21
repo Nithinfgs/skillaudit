@@ -1,0 +1,37 @@
+"""Rule catalogue used by ``skillaudit rules`` and SARIF output."""
+
+from __future__ import annotations
+
+RULES: dict[str, tuple[str, str]] = {
+    "SA001": ("error", "SKILL.md frontmatter missing or malformed"),
+    "SA002": ("error", "name missing or violates naming rules"),
+    "SA003": ("error", "name does not match directory name"),
+    "SA004": ("error", "description missing, empty or over 1024 chars"),
+    "SA005": ("error", "compatibility invalid (1-500 chars)"),
+    "SA006": ("error", "metadata must map strings to strings"),
+    "SA007": ("info", "unknown frontmatter field"),
+    "SA008": ("error", "allowed-tools has wrong type"),
+    "SA101": ("warning", "description lacks a 'when to use' trigger"),
+    "SA102": ("warning", "description too short to select the skill reliably"),
+    "SA103": ("warning", "body exceeds 500 lines"),
+    "SA104": ("warning", "body exceeds ~5000 tokens"),
+    "SA105": ("error", "referenced file does not exist"),
+    "SA106": ("error", "reference escapes the skill directory"),
+    "SA107": ("info", "reference chain deeper than one level"),
+    "SA108": ("warning", "SKILL.md body is empty"),
+    "SA110": ("warning", "name+description metadata too token-heavy"),
+    "SA201": ("error", "prompt-injection or concealment phrasing"),
+    "SA202": ("error", "invisible or bidirectional Unicode characters"),
+    "SA203": ("error", "remote code piped into an interpreter"),
+    "SA204": ("warning", "access to credential or sensitive paths"),
+    "SA205": ("error", "hard-coded secret or private key"),
+    "SA206": ("error", "obfuscated or decoded payload execution"),
+    "SA207": ("error", "destructive command"),
+    "SA208": ("warning", "unrestricted allowed-tools grant"),
+    "SA209": ("warning", "instruction-like text hidden in an HTML comment"),
+    "SA210": ("error", "credential exfiltration pattern"),
+    "SA211": ("warning", "uses sudo"),
+    "SA301": ("error", "duplicate skill name across the library"),
+    "SA302": ("warning", "overlapping descriptions (trigger collision)"),
+    "SA303": ("warning", "total always-loaded metadata over budget"),
+}
